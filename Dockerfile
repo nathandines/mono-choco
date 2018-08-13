@@ -13,9 +13,11 @@ RUN chmod +x build.sh zip.sh
 RUN ./build.sh -v
 
 
-FROM debian
+FROM microsoft/dotnetcore:2.1-sdk
 
-RUN apt update && apt install -y mono-devel && apt-get clean all
+RUN apt update && \
+  apt install -y mono-devel && \
+  apt-get clean all
 COPY --from=builder /usr/local/src/choco/build_output/chocolatey /opt/chocolatey
 COPY bin/choco /usr/bin/choco
 
