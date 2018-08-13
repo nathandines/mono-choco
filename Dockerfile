@@ -13,7 +13,7 @@ RUN chmod +x build.sh zip.sh
 RUN ./build.sh -v
 
 
-FROM microsoft/dotnetcore:2.1-sdk
+FROM microsoft/dotnet:2.1-sdk
 
 RUN apt update && \
   apt install -y mono-devel && \
