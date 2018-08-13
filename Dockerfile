@@ -1,7 +1,7 @@
 FROM mono:3.12.1 as builder
 ARG CHOCOVERSION=stable
 
-RUN apt-get update && apt-get install -y wget tar gzip
+RUN apt-get update && apt-get install -y wget tar gzip git
 
 WORKDIR /usr/local/src
 RUN wget "https://github.com/chocolatey/choco/archive/${CHOCOVERSION}.tar.gz"
